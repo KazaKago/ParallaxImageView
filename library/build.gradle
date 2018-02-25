@@ -1,13 +1,17 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'com.novoda.bintray-release'
+
+def VERSION_CODE = 1
+def VERSION_NAME = "1.0.0-SNAPSHOT"
 
 android {
     compileSdkVersion 27
     defaultConfig {
         minSdkVersion 16
         targetSdkVersion 27
-        versionCode 1
-        versionName "1.0"
+        versionCode VERSION_CODE
+        versionName VERSION_NAME
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -16,6 +20,21 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+publish {
+    userOrg = 'kazakago'
+    groupId = 'com.kazakago.parallaximageview'
+    artifactId = 'parallaximageview'
+    publishVersion = VERSION_NAME
+    desc = 'The parallax ImageView for Android.'
+    website = 'https://github.com/KazaKago/ParallaxImageView'
+    licences = ['MIT']
+}
+
+afterEvaluate {
+    //To avoid making javadoc generation fail.
+    tasks.findByPath(":library:releaseAndroidJavadocs").enabled = false
 }
 
 dependencies {
