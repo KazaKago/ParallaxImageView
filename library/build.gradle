@@ -8,7 +8,7 @@ def VERSION_NAME = "1.0.0-SNAPSHOT"
 android {
     compileSdkVersion 27
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 15
         targetSdkVersion 27
         versionCode VERSION_CODE
         versionName VERSION_NAME
