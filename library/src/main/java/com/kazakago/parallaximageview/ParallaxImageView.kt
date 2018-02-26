@@ -38,8 +38,9 @@ open class ParallaxImageView @JvmOverloads constructor(context: Context, attrs: 
         nativeImageView.setImageResource(typedArray.getResourceId(R.styleable.ParallaxImageView_src, 0))
         typedArray.recycle()
 
-        viewTreeObserver.addOnDrawListener {
+        viewTreeObserver.addOnPreDrawListener {
             dispatchParallax()
+            true
         }
     }
 
