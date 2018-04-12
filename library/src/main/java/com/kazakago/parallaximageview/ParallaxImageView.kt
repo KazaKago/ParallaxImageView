@@ -22,7 +22,7 @@ open class ParallaxImageView @JvmOverloads constructor(context: Context, attrs: 
     }
 
     companion object {
-        const val defaultDistance = 100f
+        const val defaultDistance = 200f
     }
 
     open var direction: Direction = Direction.Forward
