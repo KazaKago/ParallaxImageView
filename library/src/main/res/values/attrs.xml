@@ -2,5 +2,9 @@
 <resources>
     <declare-styleable name="ParallaxImageView">
         <attr name="src" format="reference"/>
+        <attr name="direction" format="enum">
+            <enum name="forward" value="0"/>
+            <enum name="reverse" value="1"/>
+        </attr>
     </declare-styleable>
 </resources>

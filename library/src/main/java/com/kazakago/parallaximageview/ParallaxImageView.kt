@@ -17,8 +17,8 @@ import android.widget.ImageView
 open class ParallaxImageView @JvmOverloads constructor(context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0) : FrameLayout(context, attrs, defStyleAttr) {
 
     enum class Direction(val value: Int) {
-        Forward(1),
-        Reverse(-1),
+        Forward(-1),
+        Reverse(1),
     }
 
     companion object {
@@ -35,8 +35,14 @@ open class ParallaxImageView @JvmOverloads constructor(context: Context, attrs: 
         nativeImageView = rootView.findViewById(R.id.nativeImageView)
 
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.ParallaxImageView, defStyleAttr, 0)
-        nativeImageView.setImageResource(typedArray.getResourceId(R.styleable.ParallaxImageView_src, 0))
+        val imageResourceId = typedArray.getResourceId(R.styleable.ParallaxImageView_src, 0)
+        val directionId = typedArray.getInt(R.styleable.ParallaxImageView_direction, 0)
         typedArray.recycle()
+
+        nativeImageView.setImageResource(imageResourceId)
+        if (directionId == 1) {
+            direction = Direction.Reverse
+        }
 
         viewTreeObserver.addOnPreDrawListener {
             dispatchParallax()
