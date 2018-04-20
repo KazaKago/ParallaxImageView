@@ -1,7 +1,6 @@
 package com.kazakago.parallaximageview.sample
 
 import android.content.Context
-import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,7 +9,7 @@ import kotlinx.android.synthetic.main.view_cell.view.*
 class MainRecyclerAdapter(private val context: Context) : RecyclerView.Adapter<MainRecyclerAdapter.ViewHolder>() {
 
     override fun getItemCount(): Int {
-        return 10
+        return 20
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainRecyclerAdapter.ViewHolder {
@@ -18,10 +17,6 @@ class MainRecyclerAdapter(private val context: Context) : RecyclerView.Adapter<M
     }
 
     override fun onBindViewHolder(holder: MainRecyclerAdapter.ViewHolder, position: Int) {
-        holder.itemView.setBackgroundColor(ContextCompat.getColor(context, when (position % 2) {
-            0 -> R.color.cell1
-            else -> R.color.cell2
-        }))
         holder.itemView.parallaxImageView.setImageResource(when (position % 5) {
             0 -> R.drawable.img_q1
             1 -> R.drawable.img_q2
