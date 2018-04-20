@@ -22,11 +22,11 @@ open class ParallaxImageView @JvmOverloads constructor(context: Context, attrs: 
     }
 
     companion object {
-        const val defaultDistance = 200f
+        private const val DEFAULT_DISTANCE_DP = 50f
     }
 
     open var direction: Direction = Direction.Forward
-    open var distance: Float = defaultDistance
+    open var distance: Float = 0f
 
     val nativeImageView: ImageView
 
@@ -36,13 +36,17 @@ open class ParallaxImageView @JvmOverloads constructor(context: Context, attrs: 
 
         val typedArray = context.obtainStyledAttributes(attrs, R.styleable.ParallaxImageView, defStyleAttr, 0)
         val imageResourceId = typedArray.getResourceId(R.styleable.ParallaxImageView_src, 0)
-        val directionId = typedArray.getInt(R.styleable.ParallaxImageView_direction, 0)
-        typedArray.recycle()
-
         nativeImageView.setImageResource(imageResourceId)
-        if (directionId == 1) {
+        val defaultDistancePx = DEFAULT_DISTANCE_DP * resources.displayMetrics.density
+        distance = typedArray.getDimension(R.styleable.ParallaxImageView_distance, defaultDistancePx)
+        val directionId = typedArray.getInt(R.styleable.ParallaxImageView_direction, 0)
+        if (directionId == 0) {
+            direction = Direction.Forward
+        } else if (directionId == 1) {
             direction = Direction.Reverse
         }
+        typedArray.recycle()
+
 
         viewTreeObserver.addOnPreDrawListener {
             dispatchParallax()
