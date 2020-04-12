@@ -2,7 +2,7 @@ ParallaxImageView
 ====
 
 [![Download](https://api.bintray.com/packages/kazakago/maven/parallaximageview/images/download.svg)](https://bintray.com/kazakago/maven/parallaximageview/_latestVersion)
-[![Build Status](https://www.bitrise.io/app/b0e1a53834e256a3/status.svg?token=78T5u9N6K5RGcIwKycve1Q)](https://www.bitrise.io/app/b0e1a53834e256a3)
+[![Build Status](https://app.bitrise.io/app/0b3ab1597155f96e/status.svg?token=mw1ICptiCbjZ8OKVlRmXEA&branch=master)](https://app.bitrise.io/app/0b3ab1597155f96e)
 [![license](https://img.shields.io/github/license/kazakago/parallaximageview.svg)](LICENSE.md)
 
 The parallax ImageView for Android.
