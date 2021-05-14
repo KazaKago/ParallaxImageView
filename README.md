@@ -2,6 +2,7 @@ ParallaxImageView
 ====
 
 [![Maven Central](https://img.shields.io/maven-central/v/com.kazakago.parallaximageview/parallaximageview.svg)](https://search.maven.org/artifact/com.kazakago.parallaximageview/parallaximageview)
+[![javadoc](https://javadoc.io/badge2/com.kazakago.parallaximageview/parallaximageview/javadoc.svg)](https://javadoc.io/doc/com.kazakago.parallaximageview/parallaximageview)
 [![Test](https://github.com/KazaKago/parallaximageview/workflows/Test/badge.svg)](https://github.com/KazaKago/parallaximageview/actions?query=workflow%3ATest)
 [![license](https://img.shields.io/github/license/kazakago/parallaximageview.svg)](LICENSE.md)
 
