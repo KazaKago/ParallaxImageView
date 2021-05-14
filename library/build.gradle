@@ -4,13 +4,13 @@ apply plugin: 'org.jetbrains.dokka'
 apply plugin: 'maven-publish'
 apply plugin: 'signing'
 
+version = "1.2.1"
+
 android {
     compileSdkVersion 30
     defaultConfig {
         minSdkVersion 15
         targetSdkVersion 30
-        versionCode 3
-        versionName "1.3.0-SNAPSHOT"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -54,9 +54,9 @@ afterEvaluate {
                 from components.release
                 artifact tasks.sourcesJar
                 artifact tasks.javadocJar
-                groupId = 'com.kazakago.parallaximageview'
-                artifactId = 'parallaximageview'
-                version = android.defaultConfig.versionName
+                it.groupId = 'com.kazakago.parallaximageview'
+                it.artifactId = 'parallaximageview'
+                it.version = version
                 pom {
                     name = 'Parallaximageview'
                     description = 'The parallax ImageView for Android.'
@@ -93,7 +93,7 @@ afterEvaluate {
             maven {
                 def releasesRepoUrl = uri('https://s01.oss.sonatype.org/service/local/staging/deploy/maven2')
                 def snapshotsRepoUrl = uri('https://s01.oss.sonatype.org/content/repositories/snapshots')
-                url = android.defaultConfig.versionName.endsWith("-SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
+                url = version.endsWith("-SNAPSHOT") ? snapshotsRepoUrl : releasesRepoUrl
                 credentials {
                     username = System.getenv('SONATYPE_USERNAME') ?: findProperty('sonatype.username').toString()
                     password = System.getenv('SONATYPE_PASSWORD') ?: findProperty('sonatype.password').toString()
