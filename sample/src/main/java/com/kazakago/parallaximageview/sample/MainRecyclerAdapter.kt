@@ -1,10 +1,10 @@
 package com.kazakago.parallaximageview.sample
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.view_cell.view.*
+import androidx.recyclerview.widget.RecyclerView
+import com.kazakago.parallaximageview.ParallaxImageView
 
 class MainRecyclerAdapter(private val context: Context) : RecyclerView.Adapter<MainRecyclerAdapter.ViewHolder>() {
 
@@ -17,7 +17,8 @@ class MainRecyclerAdapter(private val context: Context) : RecyclerView.Adapter<M
     }
 
     override fun onBindViewHolder(holder: MainRecyclerAdapter.ViewHolder, position: Int) {
-        holder.itemView.parallaxImageView.setImageResource(when (position % 5) {
+        val parallaxImageView = holder.itemView.findViewById<ParallaxImageView>(R.id.parallaxImageView)
+        parallaxImageView.setImageResource(when (position % 5) {
             0 -> R.drawable.img_q1
             1 -> R.drawable.img_q2
             2 -> R.drawable.img_q3
@@ -27,5 +28,4 @@ class MainRecyclerAdapter(private val context: Context) : RecyclerView.Adapter<M
     }
 
     inner class ViewHolder(context: Context, parent: ViewGroup) : RecyclerView.ViewHolder(LayoutInflater.from(context).inflate(R.layout.view_cell, parent, false))
-
 }
