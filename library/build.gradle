@@ -60,7 +60,7 @@ afterEvaluate {
                 pom {
                     name = 'Parallaximageview'
                     description = 'The parallax ImageView for Android.'
-                    url = 'https://github.com/KazaKago/ParallaxImageView.kt'
+                    url = 'https://github.com/KazaKago/ParallaxImageView'
                     licenses {
                         license {
                             name = 'MIT License'
@@ -68,9 +68,9 @@ afterEvaluate {
                         }
                     }
                     scm {
-                        connection = 'git:git@github.com:KazaKago/ParallaxImageView.kt'
-                        developerConnection = 'git:git@github.com:KazaKago/ParallaxImageView.kt'
-                        url = 'https://github.com/KazaKago/ParallaxImageView.kt'
+                        connection = 'git:git@github.com:KazaKago/ParallaxImageView'
+                        developerConnection = 'git:git@github.com:KazaKago/ParallaxImageView'
+                        url = 'https://github.com/KazaKago/ParallaxImageView'
                     }
                     developers {
                         developer {
