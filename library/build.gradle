@@ -10,7 +10,7 @@ android {
         minSdkVersion 15
         targetSdkVersion 30
         versionCode 3
-        versionName "1.2.0"
+        versionName "1.3.0-SNAPSHOT"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
